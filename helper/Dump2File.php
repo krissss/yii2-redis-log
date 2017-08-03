@@ -2,7 +2,7 @@
 
 namespace kriss\log\helper;
 
-use common\log\RedisTarget;
+use kriss\log\RedisTarget;
 use Yii;
 use yii\base\Component;
 use yii\log\FileTarget;
