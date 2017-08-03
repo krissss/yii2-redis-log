@@ -20,6 +20,7 @@ class Dump2File extends Component
     public $fileTarget = 'yii\log\FileTarget';
     /**
      * dump count
+     * <=0 will dump all
      * @var int
      */
     public $count = 1000;
@@ -43,7 +44,7 @@ class Dump2File extends Component
         Yii::trace('dump to file start', __CLASS__);
         $i = 0;
         $text = '';
-        while ($i < $this->count && $message = $this->redisTarget->redis->rpop($this->redisTarget->key)) {
+        while (($this->count <= 0 || $i < $this->count) && $message = $this->redisTarget->redis->rpop($this->redisTarget->key)) {
             if ($i % 20 === 0) {
                 Yii::trace('dump to file', __CLASS__);
                 $this->export2File($text);
