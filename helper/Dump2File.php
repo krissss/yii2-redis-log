@@ -50,12 +50,12 @@ class Dump2File extends Component
                 $this->export2File($text);
                 $text = '';
             }
-            $text .= $message;
+            $text .= $message . "\n";
             $i++;
         }
         Yii::trace('dump to file', __CLASS__);
         $this->export2File($text);
-        Yii::trace('dump to file over', __CLASS__);
+        Yii::trace('dump to file over, size:' . $i, __CLASS__);
     }
 
     /**
