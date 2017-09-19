@@ -25,7 +25,7 @@ class RedisTarget extends Target
      * Default className is yii\log\FileTarget
      * used in [kriss\log\helper\Dump2File]
      * className or Yii config of yii\log\FileTarget
-     * usefull config like:
+     * useful config like:
      * [logFile] [maxFileSize] [maxLogFiles] ...
      * @var string|array
      */

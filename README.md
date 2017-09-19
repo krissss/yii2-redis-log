@@ -51,7 +51,7 @@ Yii::error('this is en error');
 Dump Redis Log to File
 -----
 
-config
+1. config
 
 ```php
 'log' => [
@@ -69,7 +69,7 @@ config
 ]
 ```
 
-Dump One
+2.1. Dump One
 
 ```php
 $dumper = new Dump2File([
@@ -78,7 +78,7 @@ $dumper = new Dump2File([
 $dumper->dump();
 ```
 
-Dump From Yii Log Target
+2.2. Dump From Yii Log Target
 
 ```php
 $targets = Yii::$app->log->targets;

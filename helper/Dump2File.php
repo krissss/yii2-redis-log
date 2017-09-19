@@ -98,6 +98,7 @@ class Dump2File extends Component
 
     /**
      * Writes log messages to a file.
+     * same like FileTarget only Remove formatMessage
      * @param $text string
      * @throws InvalidConfigException if unable to open the log file for writing
      */
@@ -130,6 +131,7 @@ class Dump2File extends Component
 
     /**
      * Rotates log files.
+     * same like FileTarget
      */
     protected function rotateFiles()
     {

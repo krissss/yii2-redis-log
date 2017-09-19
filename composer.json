@@ -2,7 +2,7 @@
     "name": "kriss/yii2-redis-log",
     "description": "Yii2 log redisTarget",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension","log","redisTarget"],
+    "keywords": ["yii2", "extension", "log", "redisTarget"],
     "license": "MIT",
     "authors": [
         {
