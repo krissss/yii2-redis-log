@@ -10,7 +10,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist kriss/yii2-redis-log "*" -vvv
+php composer.phar require --prefer-dist kriss/yii2-redis-log -vvv
 ```
 
 or add
@@ -51,19 +51,44 @@ Yii::error('this is en error');
 Dump Redis Log to File
 -----
 
+config
+
+```php
+'log' => [
+    'targets' => [
+        [
+            'class' => 'kriss\log\RedisTarget',
+            'redis' => 'redis',
+            'key' => 'yii.log',
+            'dumpFileTarget' => [
+                'logFile' => '@common/runtime/logs/error.log',
+            ]
+            'levels' => ['error', 'warning'],
+        ],
+    ]
+]
+```
+
+Dump One
+
 ```php
 $dumper = new Dump2File([
-  // this should be euqal like log in config 
-  'redisTarget' => [
-      'class' => 'kriss\log\RedisTarget',
-      'redis' => 'redis',
-      'key' => 'yii.log',
-  ],
-  'fileTarget' => [
-      'class' => 'yii\log\FileTarget',
-      'logFile' => '@common/runtime/logs/error.log',
-  ],
-  'count' => 0
+  'redisTargetKey' => 'yii.log',
 ]);
 $dumper->dump();
+```
+
+Dump From Yii Log Target
+
+```php
+$targets = Yii::$app->log->targets;
+foreach ($targets as $target) {
+    if ($target instanceof RedisTarget) {
+        $dumper = new Dump2File([
+            'redisTarget' => $target,
+            'count' => 1000
+        ]);
+        $dumper->dump();
+    }
+}
 ```

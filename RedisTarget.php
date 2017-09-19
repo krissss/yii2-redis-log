@@ -16,9 +16,20 @@ class RedisTarget extends Target
     public $redis = 'redis';
 
     /**
-     * @var string key of the Redis list to store log messages. Default to "log"
+     * @var string key of the Redis list to store log messages. Default to "yii.log"
      */
     public $key = 'yii.log';
+
+    /**
+     * To Dump Redis Log To FileTarget
+     * Default className is yii\log\FileTarget
+     * used in [kriss\log\helper\Dump2File]
+     * className or Yii config of yii\log\FileTarget
+     * usefull config like:
+     * [logFile] [maxFileSize] [maxLogFiles] ...
+     * @var string|array
+     */
+    public $dumpFileTarget;
 
     /**
      * Initializes the RedisTarget component.
