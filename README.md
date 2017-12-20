@@ -62,7 +62,7 @@ Dump Redis Log to File
             'key' => 'yii.log',
             'dumpFileTarget' => [
                 'logFile' => '@common/runtime/logs/error.log',
-            ]
+            ],
             'levels' => ['error', 'warning'],
         ],
     ]
