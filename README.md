@@ -32,7 +32,10 @@ Simple Usage
     'targets' => [
         [
             'class' => 'kriss\log\RedisTarget',
-            'redis' => 'redis',
+              'redis' => [
+                        'hostname' => 'localhost',
+                        'port' => 6379,                        
+             ],
             'key' => 'yii.log',
             'levels' => ['error', 'warning'],
         ],
