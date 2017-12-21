@@ -32,10 +32,12 @@ Simple Usage
     'targets' => [
         [
             'class' => 'kriss\log\RedisTarget',
-              'redis' => [
-                        'hostname' => 'localhost',
-                        'port' => 6379,                        
-             ],
+            'redis' => [
+                'hostname' => 'localhost',
+                'port' => 6379,                        
+            ],
+            // If you have configured the redis yii\redis\Connection as an application component,use bwlow
+            //'redis' => 'redis',
             'key' => 'yii.log',
             'levels' => ['error', 'warning'],
         ],
