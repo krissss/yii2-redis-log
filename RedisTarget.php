@@ -27,6 +27,7 @@ class RedisTarget extends Target
      * className or Yii config of yii\log\FileTarget
      * useful config like:
      * [logFile] [maxFileSize] [maxLogFiles] ...
+     *
      * @var string|array
      */
     public $dumpFileTarget;
@@ -34,6 +35,7 @@ class RedisTarget extends Target
     /**
      * Initializes the RedisTarget component.
      * This method will initialize the [[redis]] property to make sure it refers to a valid Redis connection.
+     *
      * @throws InvalidConfigException if [[redis]] is invalid.
      */
     public function init()
